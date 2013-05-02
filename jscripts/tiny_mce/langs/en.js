@@ -167,4 +167,7 @@ upper_roman:"Upper roman",
 circle:"Circle",
 disc:"Disc",
 square:"Square"
+},
+loxamail:{
+unload_msg:"The changes you made will be lost if you navigate away from this page."
 }}});

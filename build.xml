@@ -190,6 +190,7 @@
 			<fileset dir="${build_dir}" includes="plugins/wordcount/editor_plugin.js" />
 			<fileset dir="${build_dir}" includes="themes/advanced/langs/en.js" />
 			<fileset dir="${build_dir}" includes="themes/advanced/editor_template.js" />
+			<fileset dir="${build_dir}" includes="plugins/loxamail/editor_plugin.js" />
 		</concat>
 	</target>
 
