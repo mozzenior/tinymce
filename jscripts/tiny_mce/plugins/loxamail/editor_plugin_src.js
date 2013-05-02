@@ -20,11 +20,11 @@
     // @param {string} url to where the plugin is located.
     init: function(editor, url) {
       // Add ask before unload dialog only add one unload handler.
-      if (!this['static']._beforeUnloadHandlerAdded) {
+      var LoxaMail = this['static'];
+      if (!LoxaMail._beforeUnloadHandlerAdded) {
         window.onbeforeunload = function(aEvent) {
           var msg = null;
-          var _this = tinymce.plugins.LoxaMail;
-          if (_this._beforeUnloadHandlerEnabled) {
+          if (LoxaMail._beforeUnloadHandlerEnabled) {
             tinymce.each(tinyMCE.editors, function(editor) {
               // Never ask in fullscreen mode.
               if (editor.getParam('fullscreen_is_enabled'))
@@ -33,11 +33,11 @@
               if (!msg && editor.getContent())
                 msg = editor.getLang('loxamail.unload_msg');
             });
-            _this._disableBeforeUnloadHandler();
+            LoxaMail._disableBeforeUnloadHandler();
           }
           return msg;
         };
-        this['static']._beforeUnloadHandlerAdded = true;
+        LoxaMail._beforeUnloadHandlerAdded = true;
       }
     },
     'static': {
