@@ -44,11 +44,11 @@
       _beforeUnloadHandlerAdded: false,
       _beforeUnloadHandlerEnabled: true,
       _disableBeforeUnloadHandler: function() {
+        var _this = this;
         this._beforeUnloadHandlerEnabled = false;
-        setTimeout(this._enableBeforeUnloadHandler, 100);
-      },
-      _enableBeforeUnloadHandler: function() {
-        this._beforeUnloadHandlerEnabled = true;
+        setTimeout(function() {
+          _this._beforeUnloadHandlerEnabled = true;
+        }, 100);
       }
     }
   });
