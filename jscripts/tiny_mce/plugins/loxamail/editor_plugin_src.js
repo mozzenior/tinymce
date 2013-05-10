@@ -40,6 +40,13 @@
         LoxaMail._beforeUnloadHandlerAdded = true;
       }
     },
+    disable: function() {
+      var LoxaMail = this['static'];
+      if (LoxaMail._beforeUnloadHandlerAdded) {
+        window.onbeforeunload = null;
+        LoxaMail._beforeUnloadHandlerAdded = false;
+      }
+    },
     'static': {
       _beforeUnloadHandlerAdded: false,
       _beforeUnloadHandlerEnabled: true,
