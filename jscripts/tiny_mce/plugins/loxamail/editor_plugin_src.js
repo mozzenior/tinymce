@@ -35,7 +35,9 @@
             });
             LoxaMail._disableBeforeUnloadHandler();
           }
-          return msg;
+          // Prevent IE from prompting warning dialog when msg is null.
+          if (msg !== null)
+            return msg;
         };
         LoxaMail._beforeUnloadHandlerAdded = true;
       }
